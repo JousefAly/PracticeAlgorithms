@@ -8,15 +8,17 @@ namespace ConsoleApp1
 {
     public static class SumFunction
     {
-        public static int Sum(int[] arr)
+        public static int Sum(List<int> list)
         {
-            if (arr.Length == 0)
+            if (list.Count == 0)
             {
                 return 0;
             }
             else
             {
-                return arr[0] + Sum(arr);
+                var number = list[0];
+                list.RemoveAt(0);
+                return number + Sum(list);
             }
         }
     }
