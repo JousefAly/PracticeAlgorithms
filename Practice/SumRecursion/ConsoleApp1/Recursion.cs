@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-    public static class SumFunction
+    public static class Recursion
     {
         public static int Sum(List<int> list)
         {
@@ -35,10 +35,25 @@ namespace ConsoleApp1
             }
 
         }
+
+        public static int CountList(List<int> list)
+        {
+            if (!list.Any())
+            {
+                return 0;
+            }
+            else
+            {
+                list.RemoveAt(0);
+                return 1 + CountList(list);
+            }
+        }
+
         private static int[] RemoveItem(int[] arr, int itemToRemove)
         {
 
             return arr.Where(e => e != itemToRemove).ToArray();
         }
+
     }
 }
