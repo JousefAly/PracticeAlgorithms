@@ -9,6 +9,9 @@ namespace ConsoleApp1
         {
             var list = new List<int> { 1, 2, 50, 55 };
             Console.WriteLine(SumFunction.Sum(list));
+
+            var arr = new int[] {  50, 155151151};
+            Console.WriteLine(SumFunction.Sum(arr));
         }
     }
 }

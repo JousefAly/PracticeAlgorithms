@@ -21,5 +21,24 @@ namespace ConsoleApp1
                 return number + Sum(list);
             }
         }
+        public static int Sum(int[] arr)
+        {
+            if (arr.Length == 0)
+            {
+                return 0;
+            }
+            else
+            {
+                var left = arr[0];
+                arr = RemoveItem(arr, left);
+                return left + Sum(arr);
+            }
+
+        }
+        private static int[] RemoveItem(int[] arr, int itemToRemove)
+        {
+
+            return arr.Where(e => e != itemToRemove).ToArray();
+        }
     }
 }
